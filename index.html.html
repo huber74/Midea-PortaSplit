@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midea PortaSplit – El Aire Acondicionado que se Instala Solo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cold:#00C2FF;--sky:#1A9ED4;--deep:#073A5A;
+  --dark:#050F16;--white:#fff;--warn:#FF6B2B;--gold:#FFB800;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden;}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,#020D16 0%,#073A5A 55%,#0A5070 100%);display:flex;align-items:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 50%,rgba(0,194,255,.18) 0%,transparent 70%);}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(0,194,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,194,255,.04) 1px,transparent 1px);background-size:60px 60px;}
+.hero-wrap{max-width:1200px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,194,255,.15);border:1px solid rgba(0,194,255,.4);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:500;color:var(--cold);margin-bottom:24px;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.05;margin-bottom:24px;}
+h1 em{font-style:normal;color:var(--cold);display:block;}
+.hero-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:36px;max-width:480px;}
+.hero-sub strong{color:#fff;font-weight:500;}
+.btn-cta{display:inline-flex;align-items:center;gap:12px;background:var(--warn);color:#fff;padding:18px 36px;border-radius:8px;font-family:'Syne',sans-serif;font-size:17px;font-weight:700;text-decoration:none;box-shadow:0 8px 30px rgba(255,107,43,.4);transition:all .2s;}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(255,107,43,.5);}
+.cta-note{margin-top:14px;font-size:13px;color:rgba(255,255,255,.4);}
+.hero-img-wrap{position:relative;display:flex;justify-content:center;align-items:center;}
+.hero-img-wrap img{width:100%;max-width:500px;object-fit:contain;animation:float 4s ease-in-out infinite;border-radius:16px;}
+.glow{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(0,194,255,.15) 0%,transparent 70%);pointer-events:none;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+
+/* IMG FALLBACK: when image doesn't load show placeholder */
+img{background:linear-gradient(135deg,#073A5A,#0A5070);min-height:40px;}
+
+/* GALLERY */
+.gallery{background:#060D15;padding:50px 40px;border-top:1px solid rgba(255,255,255,.05);}
+.gallery-inner{max-width:1200px;margin:0 auto;}
+.gallery-label{text-align:center;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:28px;}
+.gallery-row{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.1) transparent;}
+.gallery-thumb{flex-shrink:0;width:190px;height:190px;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.08);cursor:pointer;transition:all .3s;background:linear-gradient(135deg,#073A5A,#020D16);}
+.gallery-thumb:hover{border-color:rgba(0,194,255,.5);transform:scale(1.04);}
+.gallery-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+.gallery-thumb:hover img{transform:scale(1.08);}
+
+/* SECTION COMMON */
+.sec-label{text-align:center;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cold);margin-bottom:16px;}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:800;text-align:center;line-height:1.15;margin-bottom:16px;}
+.sec-sub{text-align:center;color:rgba(255,255,255,.5);font-size:17px;max-width:560px;margin:0 auto 56px;line-height:1.7;}
+
+/* PAIN */
+.pain{background:#050F16;padding:80px 40px;}
+.pain-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.pain-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:30px 26px;transition:border-color .3s;}
+.pain-card:hover{border-color:rgba(0,194,255,.3);}
+.pain-card .ico{font-size:30px;margin-bottom:14px;display:block;}
+.pain-card h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;color:var(--warn);margin-bottom:8px;line-height:1.3;}
+.pain-card p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;}
+
+/* SOL STRIP */
+.sol{background:linear-gradient(90deg,var(--sky),var(--cold));padding:22px 40px;text-align:center;}
+.sol p{font-family:'Syne',sans-serif;font-size:clamp(17px,2.5vw,25px);font-weight:700;color:#050F16;}
+
+/* 2-COL IMAGE SECTIONS */
+.img-sec{padding:90px 40px;}
+.img-sec.bg1{background:#060D15;}
+.img-sec.bg2{background:#050F16;}
+.img-sec-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.img-sec-inner.rev{direction:rtl;}
+.img-sec-inner.rev>*{direction:ltr;}
+.showcase{border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#073A5A,#0A5070);padding:32px;display:flex;justify-content:center;align-items:center;min-height:360px;}
+.showcase img{width:100%;max-width:400px;object-fit:contain;}
+.feat-text .lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cold);margin-bottom:14px;display:block;}
+.feat-text h2{font-family:'Syne',sans-serif;font-size:clamp(26px,3vw,40px);font-weight:800;line-height:1.2;margin-bottom:18px;}
+.feat-text h2 em{font-style:normal;color:var(--cold);}
+.feat-text p{font-size:16px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:14px;}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.pill{display:inline-flex;align-items:center;gap:6px;background:rgba(0,194,255,.1);border:1px solid rgba(0,194,255,.25);border-radius:100px;padding:5px 14px;font-size:13px;color:var(--cold);font-weight:500;}
+
+/* INSTALL */
+.install{background:#050F16;padding:100px 40px;}
+.install-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.install-img{border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#073A5A,#0A5070);padding:36px;display:flex;justify-content:center;align-items:center;min-height:420px;}
+.install-img img{width:100%;max-width:380px;object-fit:contain;}
+.step-lbl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--cold);margin-bottom:14px;display:block;}
+.step-title{font-family:'Syne',sans-serif;font-size:clamp(26px,3vw,40px);font-weight:800;line-height:1.15;margin-bottom:36px;}
+.steps{display:flex;flex-direction:column;gap:22px;margin-bottom:36px;}
+.step{display:flex;gap:18px;align-items:flex-start;}
+.step-n{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--cold));display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#050F16;}
+.step h4{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px;}
+.step p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.6;}
+
+/* FEATURES GRID */
+.feats{background:#060D15;padding:100px 40px;}
+.feats-grid{max-width:1100px;margin:56px auto 0;display:grid;grid-template-columns:repeat(2,1fr);gap:2px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.06);}
+.feat{background:rgba(255,255,255,.025);padding:38px 34px;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s;}
+.feat:hover{background:rgba(0,194,255,.05);}
+.feat:nth-child(2n){border-right:none;}
+.feat .fi{font-size:34px;margin-bottom:14px;}
+.feat h3{font-family:'Syne',sans-serif;font-size:19px;font-weight:700;margin-bottom:8px;}
+.feat p{font-size:15px;color:rgba(255,255,255,.5);line-height:1.7;}
+.stat{display:inline-block;margin-top:10px;background:rgba(0,194,255,.12);border:1px solid rgba(0,194,255,.3);border-radius:6px;padding:3px 10px;font-size:13px;font-weight:500;color:var(--cold);}
+
+/* LIFESTYLE */
+.life{background:#050F16;padding:60px 40px;}
+.life-inner{max-width:1200px;margin:0 auto;}
+.life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px;}
+.life-card{border-radius:16px;overflow:hidden;position:relative;min-height:260px;background:linear-gradient(135deg,#073A5A,#020D16);}
+.life-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.life-card:hover img{transform:scale(1.06);}
+.life-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(2,13,22,.9));padding:24px 18px 18px;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;}
+
+/* COMPARISON */
+.cmp{background:#060D15;padding:100px 40px;}
+.cmp-table{max-width:900px;margin:56px auto 0;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08);}
+.cmp-head{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;background:rgba(255,255,255,.04);padding:18px 26px;border-bottom:1px solid rgba(255,255,255,.08);}
+.cmp-head span{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.45);text-align:center;}
+.cmp-head span:first-child{text-align:left;}
+.cmp-head .hl{color:var(--cold);display:flex;flex-direction:column;align-items:center;gap:4px;}
+.best{background:var(--cold);color:#050F16;border-radius:4px;padding:1px 7px;font-size:10px;font-weight:700;letter-spacing:1px;}
+.cmp-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:14px 26px;border-bottom:1px solid rgba(255,255,255,.05);align-items:center;transition:background .2s;}
+.cmp-row:hover{background:rgba(255,255,255,.02);}
+.cmp-row span{font-size:14px;color:rgba(255,255,255,.65);text-align:center;}
+.cmp-row span:first-child{text-align:left;color:#fff;font-weight:500;}
+.yes{color:#4CD97B;font-size:17px;}
+.no{color:rgba(255,255,255,.18);font-size:17px;}
+.pv{color:var(--cold);font-weight:600;}
+
+/* SPECS */
+.specs{background:#050F16;padding:80px 40px;}
+.specs-grid{max-width:900px;margin:46px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.spec{background:rgba(255,255,255,.03);padding:26px 22px;border:1px solid rgba(255,255,255,.06);text-align:center;border-radius:4px;}
+.sv{font-family:'Syne',sans-serif;font-size:30px;font-weight:900;color:var(--cold);display:block;margin-bottom:5px;}
+.sl{font-size:13px;color:rgba(255,255,255,.4);}
+
+/* TESTIMONIALS */
+.testi{background:#060D15;padding:100px 40px;}
+.testi-grid{max-width:1100px;margin:56px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.t-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:30px 26px;transition:border-color .3s;}
+.t-card:hover{border-color:rgba(0,194,255,.25);}
+.stars{color:var(--gold);font-size:15px;margin-bottom:14px;letter-spacing:2px;}
+.t-card p{font-size:15px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:18px;font-style:italic;}
+.t-author{font-size:13px;color:rgba(255,255,255,.35);}
+.t-author strong{display:block;color:#fff;font-weight:600;margin-bottom:2px;}
+
+/* AWARDS */
+.awards{background:#050F16;padding:56px 40px;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);}
+.awards-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;}
+.award{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;}
+.award .ai{font-size:38px;}
+.award span{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px;}
+.award small{font-size:11px;color:rgba(255,255,255,.35);}
+
+/* FINAL CTA */
+.final-cta{background:linear-gradient(135deg,#073A5A,#020D16);padding:120px 40px;text-align:center;position:relative;overflow:hidden;}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(0,194,255,.12) 0%,transparent 70%);}
+.final-cta>*{position:relative;z-index:2;}
+.urgency{display:inline-flex;align-items:center;gap:8px;background:rgba(255,107,43,.15);border:1px solid rgba(255,107,43,.4);border-radius:100px;padding:9px 18px;color:var(--warn);font-size:14px;font-weight:500;margin-bottom:36px;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,43,.3);}50%{box-shadow:0 0 0 8px rgba(255,107,43,0);}}
+.final-cta h2{font-family:'Syne',sans-serif;font-size:clamp(30px,5vw,54px);font-weight:900;margin-bottom:14px;}
+.final-cta>.sub{font-size:18px;color:rgba(255,255,255,.55);max-width:540px;margin:0 auto;line-height:1.7;}
+.price-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin:28px 0;}
+.price-wrap .cur{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:rgba(255,255,255,.55);align-self:flex-start;margin-top:10px;}
+.price-wrap .amt{font-family:'Syne',sans-serif;font-size:58px;font-weight:900;}
+.cta-img-wrap{margin:28px auto;max-width:340px;}
+.cta-img-wrap img{width:100%;border-radius:16px;}
+.btn-amazon{display:inline-flex;align-items:center;gap:13px;background:#FF9900;color:#111;padding:20px 46px;border-radius:10px;font-family:'Syne',sans-serif;font-size:18px;font-weight:800;text-decoration:none;transition:all .2s;box-shadow:0 8px 40px rgba(255,153,0,.4);}
+.btn-amazon:hover{transform:translateY(-3px);box-shadow:0 14px 50px rgba(255,153,0,.55);}
+.guar{font-size:13px;color:rgba(255,255,255,.3);margin-top:14px;}
+
+/* STICKY */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(7,58,90,.96);backdrop-filter:blur(14px);border-top:1px solid rgba(0,194,255,.2);padding:13px 40px;display:flex;align-items:center;justify-content:space-between;z-index:100;transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);}
+.sticky.on{transform:translateY(0);}
+.sticky .sn{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;}
+.sticky .ss{font-size:12px;color:rgba(255,255,255,.4);}
+.sticky-btn{background:var(--warn);color:#fff;padding:11px 26px;border-radius:8px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;text-decoration:none;transition:background .2s;}
+.sticky-btn:hover{background:#ff7d45;}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(28px);transition:opacity .65s,transform .65s;}
+.fi.v{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-wrap,.img-sec-inner,.install-inner{grid-template-columns:1fr;gap:40px;}
+  .img-sec-inner.rev{direction:ltr;}
+  .hero-img-wrap{order:-1;}
+  .pain-grid,.testi-grid{grid-template-columns:1fr;}
+  .life-grid{grid-template-columns:1fr 1fr;}
+  .feats-grid{grid-template-columns:1fr;}
+  .cmp-head,.cmp-row{grid-template-columns:1.5fr 1fr 1fr;}
+  .cmp-head span:nth-child(4),.cmp-row span:nth-child(4){display:none;}
+  .specs-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .hero-wrap,.pain,.img-sec,.install,.feats,.life,.cmp,.specs,.testi,.final-cta{padding-left:20px;padding-right:20px;}
+  .specs-grid{grid-template-columns:1fr;}
+  .life-grid{grid-template-columns:1fr;}
+  .awards-inner{gap:28px;}
+  .sticky{padding:12px 18px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="grid-bg"></div>
+  <div class="hero-wrap">
+    <div>
+      <div class="badge">🏆 Premio IFA 2023 · Premio Alemán de Diseño 2024</div>
+      <h1>El frío que querías, <em>sin obras ni instaladores.</em></h1>
+      <p class="hero-sub">El <strong>Midea PortaSplit</strong> es el único aire acondicionado portátil con la potencia de un split de pared —<strong>3.000 frigorías, clase A++</strong>— que se instala tú solo en 10 minutos. Sin taladros, sin técnico, sin esperar cita.</p>
+      <a href="https://www.amazon.es/Midea-Portasplit-Acondicionado-Silencioso-Deshumidificador/dp/B0CY2YW8BT/" class="btn-cta" target="_blank">
+        🛒 Ver precio en Amazon
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="cta-note">✓ Envío Prime · ✓ Devolución gratuita · ✓ Garantía oficial</p>
+    </div>
+    <div class="hero-img-wrap">
+      <div class="glow"></div>
+      <img
+        src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Normal-window-930x435.png"
+        alt="Midea PortaSplit – aire acondicionado portátil tipo split"
+        style="filter:drop-shadow(0 20px 60px rgba(0,194,255,.3))"
+        onerror="this.onerror=null;this.src='https://www.midea.es/wp-content/uploads/2024/08/PortaSplit-Rooftop-windoe.png'">
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-inner">
+    <p class="gallery-label">Vista completa del producto</p>
+    <div class="gallery-row">
+      <div class="gallery-thumb">
+        <img src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Normal-window-930x435.png" alt="PortaSplit instalado ventana normal">
+      </div>
+      <div class="gallery-thumb">
+        <img src="https://www.midea.es/wp-content/uploads/2024/08/PortaSplit-Rooftop-windoe.png" alt="PortaSplit instalado ventana tejado">
+      </div>
+      <div class="gallery-thumb">
+        <img src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Balcony-window.png" alt="PortaSplit instalado balcón">
+      </div>
+      <div class="gallery-thumb">
+        <img src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Whole-room-vision.png" alt="PortaSplit vista sala completa">
+      </div>
+      <div class="gallery-thumb">
+        <img src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Normal-window-1024x576.png" alt="PortaSplit ventana estándar">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <p class="sec-label">¿Te suena esto?</p>
+  <h2 class="sec-title">El verano es insoportable,<br>pero poner un aire… imposible</h2>
+  <p class="sec-sub">La mayoría soporta el calor año tras año por culpa de barreras que parecen insalvables.</p>
+  <div class="pain-grid">
+    <div class="pain-card fi"><span class="ico">🏗️</span><h3>¿Inquilino? Tu casero no quiere obras.</h3><p>Taladrar paredes requiere permiso del propietario. La mayoría lo prohíbe directamente.</p></div>
+    <div class="pain-card fi"><span class="ico">💸</span><h3>La instalación cuesta tanto como el aparato.</h3><p>Un split instalado puede superar los 1.500€ en equipo + obra + técnico. Y meses de espera.</p></div>
+    <div class="pain-card fi"><span class="ico">🌡️</span><h3>Los portátiles baratos no enfrían de verdad.</h3><p>Ruido de moto, consumo desorbitado y bajan la temperatura 2°C si tienes suerte.</p></div>
+    <div class="pain-card fi"><span class="ico">📅</span><h3>Llevas semanas esperando al técnico.</h3><p>En verano los instaladores están saturados. Para cuando vienen, el verano ya pasó.</p></div>
+    <div class="pain-card fi"><span class="ico">📦</span><h3>Si te mudas, lo pierdes todo.</h3><p>El split fijo queda en el piso. Una inversión de 1.200€ que regalas al propietario.</p></div>
+    <div class="pain-card fi"><span class="ico">😤</span><h3>Comunidad, cableado, fachada… burocracia sin fin.</h3><p>Permisos, obras en fachada, pasar cables. Cada paso es un obstáculo nuevo.</p></div>
+  </div>
+</section>
+
+<!-- SOLUTION STRIP -->
+<div class="sol">
+  <p>🌊 El PortaSplit resuelve TODOS estos problemas — Sin obras · Sin instalador · Sin permisos →</p>
+</div>
+
+<!-- IMAGE SECTION 1: Producto principal -->
+<section class="img-sec bg1">
+  <div class="img-sec-inner fi">
+    <div class="showcase">
+      <img
+        src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Whole-room-vision.png"
+        alt="Midea PortaSplit en habitación – visión completa"
+        onerror="this.onerror=null;this.src='https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Normal-window-930x435.png'">
+    </div>
+    <div class="feat-text">
+      <span class="lbl">Diseño premiado</span>
+      <h2>La potencia de un split.<br><em>La libertad de un portátil.</em></h2>
+      <p>El PortaSplit es el primer aire acondicionado portátil tipo split del mundo. La unidad exterior se cuelga en la ventana sin taladros mientras la unidad interior rueda libremente.</p>
+      <p>El compresor está fuera. El silencio está dentro.</p>
+      <div class="pills">
+        <span class="pill">✓ Sin obras</span>
+        <span class="pill">✓ Sin técnico</span>
+        <span class="pill">✓ Sin permisos</span>
+        <span class="pill">✓ 10 minutos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+<section class="install">
+  <div class="install-inner">
+    <div class="install-img fi">
+      <img
+        src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Balcony-window.png"
+        alt="Instalación PortaSplit soporte balcón"
+        onerror="this.onerror=null;this.src='https://www.midea.es/wp-content/uploads/2024/08/PortaSplit-Rooftop-windoe.png'">
+    </div>
+    <div class="fi">
+      <span class="step-lbl">Instalación sin obras</span>
+      <h2 class="step-title">3 pasos.<br>10 minutos.<br>Tú solo.</h2>
+      <div class="steps">
+        <div class="step"><div class="step-n">1</div><div><h4>Fija el soporte en la ventana</h4><p>Sin taladro. El soporte ajustable se engancha al marco. Compatible con ventanas estándar, abatibles y correderas.</p></div></div>
+        <div class="step"><div class="step-n">2</div><div><h4>Cuelga la unidad exterior</h4><p>Solo 9,9 kg. La colocas tú mismo. Queda perfectamente anclada y estable.</p></div></div>
+        <div class="step"><div class="step-n">3</div><div><h4>Enchúfalo y enciéndelo</h4><p>Un enchufe de 230V. En 15 minutos notas el frío. Contrólalo desde el móvil con la app SmartHome.</p></div></div>
+      </div>
+      <a href="https://www.amazon.es/Midea-Portasplit-Acondicionado-Silencioso-Deshumidificador/dp/B0CY2YW8BT/" class="btn-cta" target="_blank" style="font-size:16px;padding:15px 26px;">
+        🛒 Comprarlo ahora en Amazon
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE SECTION 2: Silencio -->
+<section class="img-sec bg2">
+  <div class="img-sec-inner rev fi">
+    <div class="showcase">
+      <img
+        src="https://www.midea.es/wp-content/uploads/2024/08/PortaSplit-Rooftop-windoe.png"
+        alt="PortaSplit silencioso dormitorio"
+        onerror="this.onerror=null;this.src='https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Normal-window-1024x576.png'">
+    </div>
+    <div class="feat-text">
+      <span class="lbl">Silencio real</span>
+      <h2>Tan silencioso que<br><em>dormirás mejor.</em></h2>
+      <p>Solo 38 dB(A) en modo noche. El compresor está en el exterior, el ruido se queda fuera. Insonorización de triple capa en la unidad interior.</p>
+      <p>38 dB es el sonido de una biblioteca. Menos que el susurro de una persona.</p>
+      <div class="pills">
+        <span class="pill">🔇 38 dB modo silencio</span>
+        <span class="pill">🌙 Modo noche</span>
+        <span class="pill">Triple insonorización</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feats">
+  <p class="sec-label">Por qué es diferente</p>
+  <h2 class="sec-title fi">Potencia de split.<br>Libertad de portátil.</h2>
+  <div class="feats-grid">
+    <div class="feat fi"><div class="fi">❄️</div><h3>Enfría 3× más que los portátiles convencionales</h3><p>Baja de 32°C a 26°C en una hora consumiendo solo 200W. Tecnología inverter con compresor exterior.</p><span class="stat">3× más eficiente · Clase A++</span></div>
+    <div class="feat fi"><div class="fi">🔇</div><h3>Silencioso hasta para dormir</h3><p>38 dB(A) en modo silencio. El compresor está fuera. Triple insonorización. Sin el zumbido de los portátiles clásicos.</p><span class="stat">38 dB(A) modo silencio</span></div>
+    <div class="feat fi"><div class="fi">🏠</div><h3>4 en 1: frío, calor, deshumidificador y ventilador</h3><p>En invierno calienta como bomba de calor A+. En primavera deshumidifica. Todo el año en un aparato.</p><span class="stat">Reversible · Calor y frío</span></div>
+    <div class="feat fi"><div class="fi">📱</div><h3>Control total desde el móvil</h3><p>App SmartHome, Alexa y Google Home. Enciéndelo antes de llegar. Monitoriza el consumo en tiempo real.</p><span class="stat">WiFi · Alexa · Google</span></div>
+    <div class="feat fi"><div class="fi">🤖</div><h3>IA que ahorra hasta un 15% de electricidad</h3><p>Detecta si hay alguien en la habitación y ajusta la potencia. Menos consumo, misma temperatura.</p><span class="stat">Ahorro hasta 15%</span></div>
+    <div class="feat fi"><div class="fi">🚀</div><h3>Portátil de verdad. Te lo llevas donde quieras.</h3><p>Ruedas giratorias. Muévelo en segundos. Si te mudas, se va contigo. No lo regalas al piso.</p><span class="stat">Con ruedas · 100% portátil</span></div>
+  </div>
+</section>
+
+<!-- LIFESTYLE BAND -->
+<section class="life fi">
+  <div class="life-inner">
+    <p class="sec-label" style="text-align:center">Úsalo en cualquier espacio</p>
+    <div class="life-grid">
+      <div class="life-card">
+        <img src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Normal-window-930x435.png" alt="PortaSplit en dormitorio">
+        <div class="life-caption">🛏️ Dormitorio — duerme en frío toda la noche</div>
+      </div>
+      <div class="life-card">
+        <img src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Whole-room-vision.png" alt="PortaSplit en salón">
+        <div class="life-caption">🛋️ Salón — enfría hasta 42 m² en 15 minutos</div>
+      </div>
+      <div class="life-card">
+        <img src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Balcony-window.png" alt="PortaSplit en balcón">
+        <div class="life-caption">🌿 Balcón o terraza — instalación exterior sencilla</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE SECTION 3: App/Tech -->
+<section class="img-sec bg1">
+  <div class="img-sec-inner fi">
+    <div class="showcase">
+      <img
+        src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Normal-window-1024x576.png"
+        alt="Midea PortaSplit control app tecnología"
+        onerror="this.onerror=null;this.src='https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Whole-room-vision.png'">
+    </div>
+    <div class="feat-text">
+      <span class="lbl">Tecnología inteligente</span>
+      <h2>Contrólalo desde<br><em>cualquier lugar.</em></h2>
+      <p>App SmartHome con control total: temperatura, modos, temporizador y consumo en tiempo real. Compatible con Alexa y Google Home para comandos de voz.</p>
+      <p>La IA aprende tus hábitos y ajusta la potencia automáticamente. Hasta un 15% menos en la factura de la luz.</p>
+      <div class="pills">
+        <span class="pill">📱 App SmartHome</span>
+        <span class="pill">🗣️ Alexa & Google</span>
+        <span class="pill">🤖 IA integrada</span>
+        <span class="pill">📊 Monitor consumo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="cmp">
+  <p class="sec-label">La comparativa honesta</p>
+  <h2 class="sec-title fi">PortaSplit vs. la competencia</h2>
+  <div class="cmp-table fi">
+    <div class="cmp-head">
+      <span>Característica</span>
+      <span class="hl">PortaSplit <div class="best">MEJOR</div></span>
+      <span>Split fijo</span>
+      <span>Portátil clásico</span>
+    </div>
+    <div class="cmp-row"><span>Sin obras ni taladros</span><span class="yes pv">✓</span><span class="no">✗</span><span class="yes">✓</span></div>
+    <div class="cmp-row"><span>Clase energética A++ / A+</span><span class="yes pv">✓</span><span class="yes">✓</span><span class="no">✗</span></div>
+    <div class="cmp-row"><span>Nivel ruido &lt; 40 dB</span><span class="yes pv">✓</span><span class="yes">✓</span><span class="no">✗</span></div>
+    <div class="cmp-row"><span>Portátil (te lo llevas)</span><span class="yes pv">✓</span><span class="no">✗</span><span class="yes">✓</span></div>
+    <div class="cmp-row"><span>Control WiFi + app</span><span class="yes pv">✓</span><span class="yes">✓</span><span class="no">Raro</span></div>
+    <div class="cmp-row"><span>Sin permiso propietario</span><span class="yes pv">✓</span><span class="no">✗</span><span class="yes">✓</span></div>
+    <div class="cmp-row"><span>Calor + frío reversible</span><span class="yes pv">✓</span><span class="yes">✓</span><span class="no">Pocos</span></div>
+    <div class="cmp-row"><span>Coste total instalado</span><span class="pv">~950€</span><span style="color:rgba(255,255,255,.4)">1.500-2.000€</span><span style="color:rgba(255,255,255,.4)">300-500€</span></div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs">
+  <p class="sec-label">Ficha técnica</p>
+  <h2 class="sec-title fi">Los números que importan</h2>
+  <div class="specs-grid fi">
+    <div class="spec"><span class="sv">12.000</span><span class="sl">BTU / 3.000 frigorías</span></div>
+    <div class="spec"><span class="sv">42 m²</span><span class="sl">Superficie máxima</span></div>
+    <div class="spec"><span class="sv">A++</span><span class="sl">Clase energética frío</span></div>
+    <div class="spec"><span class="sv">38 dB</span><span class="sl">Nivel sonoro mínimo</span></div>
+    <div class="spec"><span class="sv">15 min</span><span class="sl">Para enfriar la habitación</span></div>
+    <div class="spec"><span class="sv">SEER 6,1</span><span class="sl">Eficiencia estacional</span></div>
+    <div class="spec"><span class="sv">4 en 1</span><span class="sl">Frío, calor, deshumid., ventilador</span></div>
+    <div class="spec"><span class="sv">9,9 kg</span><span class="sl">Peso unidad exterior</span></div>
+    <div class="spec"><span class="sv">R32</span><span class="sl">Gas refrigerante eco</span></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <p class="sec-label">Lo que dicen los compradores</p>
+  <h2 class="sec-title fi">Valoraciones reales de Amazon España</h2>
+  <div class="testi-grid">
+    <div class="t-card fi"><div class="stars">★★★★★</div><p>"Bajé la temperatura de mi despacho de 32 a 26 grados en una hora consumiendo solo 200 vatios. Un resultado increíble. Comparado con otros portátiles al mismo BTU no tiene ni punto de comparación."</p><div class="t-author"><strong>Miguel R.</strong>Comprador verificado · España</div></div>
+    <div class="t-card fi"><div class="stars">★★★★★</div><p>"Estoy súper contenta. Enfría muy bien, es silencioso y tiene una función que para el ruido pero mantiene la temperatura. Ya he pedido el soporte para ventanas abatibles — una maravilla de máquina."</p><div class="t-author"><strong>Laura M.</strong>Comprador verificado · España</div></div>
+    <div class="t-card fi"><div class="stars">★★★★☆</div><p>"Lo elegí porque permite frío y calor todo el año y Midea es una primera marca. Otros portátiles más baratos tenían fotos en reseñas que me preocupaban. Este cumple exactamente lo que promete."</p><div class="t-author"><strong>Carlos V.</strong>Comprador verificado · España</div></div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<div class="awards fi">
+  <div class="awards-inner">
+    <div class="award"><span class="ai">🥇</span><span>Gold Award IFA</span><small>Room Comfort Technology Innovation · 2023</small></div>
+    <div class="award"><span class="ai">🏅</span><span>Premio Alemán de Diseño</span><small>Feria MCE · 2024</small></div>
+    <div class="award"><span class="ai">🌍</span><span>Premio Global Innovación Técnica</span><small>Midea Group · Top mundial nº1 en climatización</small></div>
+    <div class="award"><span class="ai">⚡</span><span>Clase Energética A++</span><small>La máxima eficiencia en portátiles</small></div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="urgency">🔥 Alta demanda este verano — stock limitado disponible</div>
+  <h2 class="fi">No pases otro verano<br>sudando en casa.</h2>
+  <p class="sub">Instálalo tú mismo esta tarde. Disfruta del frío esta noche.</p>
+  <div class="price-wrap fi">
+    <span class="cur">€</span>
+    <span class="amt">~950</span>
+  </div>
+  <div class="cta-img-wrap fi">
+    <img
+      src="https://www.frigicoll.es/wp-content/uploads/2024/08/PortaSplit-Whole-room-vision.png"
+      alt="Midea PortaSplit"
+      style="filter:drop-shadow(0 10px 40px rgba(0,194,255,.3))"
+      onerror="this.onerror=null;this.src='https://www.midea.es/wp-content/uploads/2024/08/PortaSplit-Rooftop-windoe.png'">
+  </div>
+  <a href="https://www.amazon.es/Midea-Portasplit-Acondicionado-Silencioso-Deshumidificador/dp/B0CY2YW8BT/" class="btn-amazon" target="_blank">
+    🛒 Comprar en Amazon — Ver precio exacto
+  </a>
+  <p class="guar">🔒 Pago seguro · Envío Prime · Devolución 30 días · Garantía oficial Midea</p>
+</section>
+
+<!-- STICKY BAR -->
+<div class="sticky" id="stk">
+  <div>
+    <div class="sn">Midea PortaSplit 4 en 1 · 12.000 BTU</div>
+    <div class="ss">Clase A++ · Instalación en 10 min · Sin obras</div>
+  </div>
+  <a href="https://www.amazon.es/Midea-Portasplit-Acondicionado-Silencioso-Deshumidificador/dp/B0CY2YW8BT/" class="sticky-btn" target="_blank">🛒 Ver en Amazon</a>
+</div>
+
+<script>
+const stk=document.getElementById('stk');
+window.addEventListener('scroll',()=>stk.classList.toggle('on',scrollY>600));
+const els=document.querySelectorAll('.fi');
+const ob=new IntersectionObserver((ee)=>ee.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('v'),i*70);ob.unobserve(e.target);}}),{threshold:.1});
+els.forEach(e=>ob.observe(e));
+</script>
+</body>
+</html>
